@@ -38,12 +38,12 @@ robot-tests:
   - ls -l jamtanganOutline/features/ # Debugging:lihat isi direktori features
   - robot -d results jamtanganOutline/features/jamtangan.robot # Path sudah disesuaikan
 
-  artifacts:
-    when: always  # Artifacts akan disimpan, baik jika tes berhasil maupun gagal
-    paths:
-      - jamtanganOutline/results/screenshots/  # Menyimpan screenshot hasil tes jika ada
-      - jamtanganOutline/results/videos/  # Menyimpan rekaman video jika ada
-    expire_in: 1 day  # Artifacts akan tersedia selama 1 hari sebelum otomatis dihapus
+  #artifacts:
+    #when: always  # Artifacts akan disimpan, baik jika tes berhasil maupun gagal
+    #paths:
+      #- jamtanganOutline/results/screenshots/  # Menyimpan screenshot hasil tes jika ada
+      #- jamtanganOutline/results/videos/  # Menyimpan rekaman video jika ada
+    #expire_in: 1 day  # Artifacts akan tersedia selama 1 hari sebelum otomatis dihapus
 
   only:
     - main  # Pipeline akan berjalan jika ada perubahan di branch 'main'
