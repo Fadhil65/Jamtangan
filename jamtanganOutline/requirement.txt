@@ -1,0 +1,5 @@
+selenium
+chromedriver-binary  # atau cara lain untuk menginstal chromedriver yang kompatibel
+robotframework
+robotframework-seleniumlibrary
+# ... dependensi lain yang dibutuhkan
