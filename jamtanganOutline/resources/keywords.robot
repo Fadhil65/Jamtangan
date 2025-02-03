@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 Resource          ../resources/variables.robot
 Resource          ../resources/locators.robot
 Resource          ../data/data.robot    #login_data.robot Import data dari login_data.robot
-Resource          ../features/jamtangan.robot
+
 
 *** Keywords ***
 
