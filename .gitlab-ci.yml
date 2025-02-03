@@ -26,17 +26,22 @@ robot-tests:
     - pip install robotframework-databaselibrary  
 
     # Menginstal library untuk memproses JSON di Robot Framework
-    - pip install robotframework-jsonlibrary
-    - apt-get update && apt-get install -y python3 python3-pip # Install python dan pip jika belum ada di image
-    - python3 -m venv .venv # Membuat virtual environment
-    - source .venv/bin/activate # Mengaktifkan virtual environment
-    - apt-get install -y xvfb # Install xvfb untuk menjalankan browser tanpa display    
+    - apt-get update
+    - apt-get install -y wget unzip xvfb
+    - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    - apt-get install -y ./google-chrome-stable_current_amd64.deb
+    - CHROME_VERSION=$(google-chrome --version | awk '{print $3}')
+    - wget "https://chromedriver.storage.googleapis.com/${CHROME_VERSION}/chromedriver_linux64.zip"
+    - unzip chromedriver_linux64.zip
+    - mv chromedriver /usr/local/bin/
+    - chmod +x /usr/local/bin/chromedriver
+    - Xvfb :99 -screen 0 1920x1080x24 &  # Menjalankan Virtual Display
+    - export DISPLAY=:99    
 
   script:
-  - export DISPLAY=:99 # Set display untuk xvfb
-  - Xvfb :99 -screen 0 1024x768x24 & # Menjalankan xvfb di background
-  - ls -l jamtanganOutline/features/ # Debugging:lihat isi direktori features
-  - robot -d results jamtanganOutline/features/jamtangan.robot # Path sudah disesuaikan
+  - google-chrome --version
+  - chromedriver --version
+  - robot -d results jamtanganOutline/features/jamtangan.robot
 
   #artifacts:
     #when: always  # Artifacts akan disimpan, baik jika tes berhasil maupun gagal
