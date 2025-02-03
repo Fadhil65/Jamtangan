@@ -1,0 +1,45 @@
+# Menentukan tahapan (stages) dalam pipeline
+stages:
+  - test  # Tahap 'test' untuk menjalankan Robot Framework
+
+robot-tests:
+  stage: test  # Job ini berada dalam tahap 'test'
+  image: python:3.9  # Menggunakan Docker image Python 3.9 sebagai runtime environment
+
+  before_script:
+    # Memperbarui pip ke versi terbaru agar tidak ada masalah dependency
+    - pip install --upgrade pip  
+
+    # Menginstal Robot Framework (framework utama untuk testing)
+    - pip install robotframework  
+
+    # Menginstal WebDriver Manager untuk mengelola browser driver secara otomatis
+    - pip install webdriver-manager  
+
+    # Menginstal library Selenium untuk Robot Framework (digunakan untuk web testing)
+    - pip install robotframework-seleniumlibrary  
+
+    # Menginstal library untuk API testing di Robot Framework
+    - pip install robotframework-requests  
+
+    # Menginstal library untuk melakukan testing dengan database di Robot Framework
+    - pip install robotframework-databaselibrary  
+
+    # Menginstal library untuk memproses JSON di Robot Framework
+    - pip install robotframework-jsonlibrary  
+
+  script:
+    # Menjalankan Robot Framework dengan menyimpan hasilnya ke dalam folder 'results'
+    - robot -d results tests/jamtangan.robot  
+
+  artifacts:
+    when: always  # Artifacts akan disimpan, baik jika tes berhasil maupun gagal
+    paths:
+      - results/screenshots/  # Menyimpan screenshot hasil tes jika ada
+      - results/videos/  # Menyimpan rekaman video jika ada
+    expire_in: 1 day  # Artifacts akan tersedia selama 1 hari sebelum otomatis dihapus
+
+  only:
+    - main  # Pipeline akan berjalan jika ada perubahan di branch 'main'
+    - merge_requests  # Pipeline akan berjalan jika ada merge request
+    - schedules  # Pipeline juga akan berjalan jika dijalankan oleh scheduler (cron job)
