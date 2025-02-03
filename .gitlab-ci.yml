@@ -29,8 +29,8 @@ robot-tests:
     - pip install robotframework-jsonlibrary  
 
   script:
-    # Menjalankan Robot Framework dengan menyimpan hasilnya ke dalam folder 'results'
-    - robot -d results tests/jamtangan.robot  
+  - ls -l jamtanganOutline/features/ # Debugging:lihat isi direktori features
+  - robot -d results jamtanganOutline/features/jamtangan.robot # Path sudah disesuaikan
 
   artifacts:
     when: always  # Artifacts akan disimpan, baik jika tes berhasil maupun gagal
