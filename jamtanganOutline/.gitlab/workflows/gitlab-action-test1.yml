@@ -26,11 +26,18 @@ robot-tests:
     - pip install robotframework-databaselibrary  
 
     # Menginstal library untuk memproses JSON di Robot Framework
-    - pip install robotframework-jsonlibrary  
+    - pip install robotframework-jsonlibrary
+    - apt-get update && apt-get install -y python3 python3-pip # Install python dan pip jika belum ada di image
+    - python3 -m venv .venv # Membuat virtual environment
+    - source .venv/bin/activate # Mengaktifkan virtual environment
+    - pip install -r requirements.txt # Install dependencies dari requirements.txt
+    - apt-get install -y xvfb # Install xvfb untuk menjalankan browser tanpa display  
 
   script:
-    # Menjalankan Robot Framework dengan menyimpan hasilnya ke dalam folder 'results'
-    - robot -d results tests/jamtangan.robot  
+  - export DISPLAY=:99 # Set display untuk xvfb
+  - Xvfb :99 -screen 0 1024x768x24 & # Menjalankan xvfb di background
+  - ls -l jamtanganOutline/features/ # Debugging:lihat isi direktori features
+  - robot -d results jamtanganOutline/features/jamtangan.robot # Path sudah disesuaikant  
 
   artifacts:
     when: always  # Artifacts akan disimpan, baik jika tes berhasil maupun gagal
