@@ -30,12 +30,12 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install -r JamtanganOutlineGithub/requirements.txt
 
       # Step 4: Run Robot Framework tests
       - name: Run Robot Framework tests
         run: |
-          robot --outputdir results features/
+          robot --outputdir results JamtanganOutlineGithub/features/
 
      # hanya menjalankan tes dengan tag smoke:
      # - name: Run Robot Framework smoke tests
@@ -46,8 +46,6 @@ jobs:
      #  - name: Run Robot Framework tests (excluding slow tests)
      #    run: |
      #   robot --outputdir results --exclude slow tests/
-
-
 
       # Step 5: Upload test results
       - name: Upload Robot Framework results
