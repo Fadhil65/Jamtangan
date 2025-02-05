@@ -13,6 +13,6 @@ Login page
     Then I input credentials account
     
 Search Product
-    Then I search    Presage
+    Then I search    Presage SRPB43j1
     And click button add to cart
     Then click icon cart
