@@ -8,11 +8,13 @@ Resource          ../resources/keywords.robot
 *** Test Cases ***
 
 Login page
+    [Tags]    Login    Regression
     Given I Open jamtangan
     And click menu masuk
     Then I input credentials account
     
 Search Product
-    Then I search Presage
+    [Tags]    Search    Regression
+    Then I search    Presage
     And click button add to cart
     Then click icon cart

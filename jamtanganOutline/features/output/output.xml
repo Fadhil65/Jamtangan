@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.11.1 on win32)" generated="2025-02-05T21:03:47.193265" rpa="false" schemaversion="5">
+<suite id="s1" name="Jamtangan" source="C:\Users\Fadhil\Robot Framework\jamtanganOutline\features\jamtangan.robot">
+<test id="s1-t1" name="Login page" line="10">
+<kw name="Given I open jamtangan" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:03:47.446695" level="INFO">Opening browser 'chrome' to base url 'https://jamtangan.com'.</msg>
+<msg time="2025-02-05T21:03:47.972697" level="WARN">The chromedriver version (131.0.6778.264) detected in PATH at C:\Ruby31-x64\bin\chromedriver.exe might not be compatible with the detected chrome version (132.0.6834.160); currently, chromedriver 132.0.6834.159 is recommended for chrome 132.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-05T21:03:47.445701" elapsed="28.857140"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-05T21:04:16.302841" elapsed="0.180336"/>
+</kw>
+<status status="PASS" start="2025-02-05T21:03:47.445701" elapsed="29.037476"/>
+</kw>
+<kw name="And click menu masuk" owner="keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${popup_oke}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-05T21:04:16.486172" elapsed="0.100545"/>
+</kw>
+<msg time="2025-02-05T21:04:16.586717" level="INFO">${status} = PASS</msg>
+<msg time="2025-02-05T21:04:16.586717" level="INFO">${message} = None</msg>
+<var>${status}</var>
+<var>${message}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${popup_oke}</arg>
+<arg>timeout=5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-02-05T21:04:16.486172" elapsed="0.100545"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:16.587715" level="INFO">Clicking element 'xpath=//button[contains(text(), 'OKE')]'.</msg>
+<arg>${popup_oke}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:16.587715" elapsed="0.113335"/>
+</kw>
+<arg>'${status}' == 'PASS'</arg>
+<arg>Click Element</arg>
+<arg>${popup_oke}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-05T21:04:16.586717" elapsed="0.115331"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${status}' == 'FAIL'</arg>
+<arg>Log</arg>
+<arg>"OKE button not found, skipping popup interaction."</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-05T21:04:16.702048" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${popup_notif}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-05T21:04:16.702048" elapsed="1.766184"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:18.469233" level="INFO">Clicking element 'id=moe-dontallow_button'.</msg>
+<arg>${popup_notif}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:18.468232" elapsed="0.087330"/>
+</kw>
+<arg>'${status}' == 'PASS'</arg>
+<arg>Click Element</arg>
+<arg>${popup_notif}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-05T21:04:18.468232" elapsed="0.087330"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${status}' == 'FAIL'</arg>
+<arg>Log</arg>
+<arg>"nanti saja button not found, skipping popup interaction."</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-02-05T21:04:18.555562" elapsed="0.000000"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:18.556601" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>${menu}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:18.556601" elapsed="0.202452"/>
+</kw>
+<status status="PASS" start="2025-02-05T21:04:16.484175" elapsed="2.275879"/>
+</kw>
+<kw name="Then I input credentials account" owner="keywords">
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-02-05T21:04:18.762050" level="INFO">Length is 4.</msg>
+<msg time="2025-02-05T21:04:18.762050" level="INFO">${half_len} = 4</msg>
+<var>${half_len}</var>
+<arg>${LOGIN_CREDENTIALS}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-02-05T21:04:18.761053" elapsed="0.000997"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-02-05T21:04:18.763047" level="INFO">${half_len} = 2</msg>
+<var>${half_len}</var>
+<arg>${half_len} // 2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-02-05T21:04:18.762050" elapsed="0.000997"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:18.765041" level="INFO">Typing text 'sugeng252@gmail.com' into text field 'name=username'.</msg>
+<arg>${username_field}</arg>
+<arg>${LOGIN_CREDENTIALS}[${i*2}]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:18.764044" elapsed="0.241547"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:19.006589" level="INFO">Typing text 'password1' into text field 'name=password'.</msg>
+<arg>${password_field}</arg>
+<arg>${LOGIN_CREDENTIALS}[${i*2+1}]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:19.005591" elapsed="0.105235"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:19.111826" level="INFO">Clicking button 'xpath=//button[contains(@class, 'qa-login-button')]'.</msg>
+<arg>${button_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:19.110826" elapsed="0.179432"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-05T21:04:21.290342" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-05T21:04:19.290258" elapsed="2.000084"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2025-02-05T21:04:18.764044" elapsed="2.526298"/>
+</iter>
+<iter>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:21.291350" level="INFO">Typing text 'vitreissadoima-4532@yopmail.com' into text field 'name=username'.</msg>
+<arg>${username_field}</arg>
+<arg>${LOGIN_CREDENTIALS}[${i*2}]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:21.290342" elapsed="0.182611"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:21.473949" level="INFO">Typing text 'Vitri456!' into text field 'name=password'.</msg>
+<arg>${password_field}</arg>
+<arg>${LOGIN_CREDENTIALS}[${i*2+1}]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:21.472953" elapsed="0.120302"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:21.594255" level="INFO">Clicking button 'xpath=//button[contains(@class, 'qa-login-button')]'.</msg>
+<arg>${button_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:21.594255" elapsed="0.112050"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-02-05T21:04:23.706688" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-02-05T21:04:21.706305" elapsed="2.000383"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2025-02-05T21:04:21.290342" elapsed="2.416346"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>${half_len}</value>
+<status status="PASS" start="2025-02-05T21:04:18.763047" elapsed="4.943641"/>
+</for>
+<status status="PASS" start="2025-02-05T21:04:18.760054" elapsed="4.947711"/>
+</kw>
+<tag>Login</tag>
+<tag>Regression</tag>
+<status status="PASS" start="2025-02-05T21:03:47.444660" elapsed="36.263105"/>
+</test>
+<test id="s1-t2" name="Search Product" line="16">
+<kw name="Then I search" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:23.715245" level="INFO">Typing text 'Presage' into text field 'xpath=//input[@data-testid='search-input']'.</msg>
+<arg>${search_field}</arg>
+<arg>${key_search}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:23.714206" elapsed="0.251631"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${search_related}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-05T21:04:23.965837" elapsed="0.484655"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:24.450492" level="INFO">Clicking element 'xpath=//a[@data-testid='search__content-related-product']'.</msg>
+<arg>${search_related}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:24.450492" elapsed="5.788291"/>
+</kw>
+<arg>Presage</arg>
+<status status="PASS" start="2025-02-05T21:04:23.713207" elapsed="6.525576"/>
+</kw>
+<kw name="And click button add to cart" owner="keywords">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:30.242281" level="INFO">Clicking button 'id=btn-add-to-cart'.</msg>
+<arg>${button_add_to_cart}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:30.241318" elapsed="0.397148"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:30.639904" level="INFO">Clicking element 'id=btn-cta'.</msg>
+<arg>${button_add_to_cart_popup}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:30.639904" elapsed="0.258497"/>
+</kw>
+<status status="PASS" start="2025-02-05T21:04:30.240293" elapsed="0.658108"/>
+</kw>
+<kw name="Then click icon cart" owner="keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:30.899841" level="INFO">Clicking element 'xpath=//span[@class='ic-cart text-primary-1 qa-cart-button justify-end flex']'.</msg>
+<arg>${button_cart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:30.899841" elapsed="1.691945"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-05T21:04:32.592781" level="INFO">Clicking element 'xpath=//span[@class='ic-minus text-neutral-300']'.</msg>
+<arg>${button_cart_minus}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-05T21:04:32.591786" elapsed="0.156933"/>
+</kw>
+<status status="PASS" start="2025-02-05T21:04:30.898401" elapsed="1.850318"/>
+</kw>
+<tag>Regression</tag>
+<tag>Search</tag>
+<status status="PASS" start="2025-02-05T21:04:23.711212" elapsed="9.051998"/>
+</test>
+<status status="PASS" start="2025-02-05T21:03:47.195293" elapsed="45.569911"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Login</stat>
+<stat pass="2" fail="0" skip="0">Regression</stat>
+<stat pass="1" fail="0" skip="0">Search</stat>
+</tag>
+<suite>
+<stat name="Jamtangan" id="s1" pass="2" fail="0" skip="0">Jamtangan</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-02-05T21:03:47.972697" level="WARN">The chromedriver version (131.0.6778.264) detected in PATH at C:\Ruby31-x64\bin\chromedriver.exe might not be compatible with the detected chrome version (132.0.6834.160); currently, chromedriver 132.0.6834.159 is recommended for chrome 132.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>

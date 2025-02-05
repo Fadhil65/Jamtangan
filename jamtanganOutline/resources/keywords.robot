@@ -40,8 +40,9 @@ Then I input credentials account
     END
 
 
-Then I search Presage
-    Input Text    ${search_field}    Presage SRPB43j1
+Then I search
+    [Arguments]    ${key_search}
+    Input Text    ${search_field}    ${key_search}
     Wait Until Element Is Visible    ${search_related}
     Click Element    ${search_related}
 

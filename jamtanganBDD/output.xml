@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.11.1 on win32)" generated="2025-01-28T15:45:22.679567" rpa="false" schemaversion="5">
+<suite id="s1" name="Jamtangan" source="C:\Users\Fadhil\Robot Framework\jamtanganT\jamtangan.robot">
+<test id="s1-t1" name="Login page" line="8">
+<kw name="Given I open jamtangan">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-28T15:45:22.936561" level="INFO">Opening browser 'chrome' to base url 'https://jamtangan.com'.</msg>
+<msg time="2025-01-28T15:45:23.380585" level="WARN">The chromedriver version (131.0.6778.264) detected in PATH at C:\Ruby31-x64\bin\chromedriver.exe might not be compatible with the detected chrome version (132.0.6834.111); currently, chromedriver 132.0.6834.110 is recommended for chrome 132.*, so it is advised to delete the driver in PATH and retry</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-28T15:45:22.935563" elapsed="4.777695"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-28T15:45:27.714255" elapsed="0.414206"/>
+</kw>
+<status status="PASS" start="2025-01-28T15:45:22.935563" elapsed="5.193896"/>
+</kw>
+<kw name="Then Click menu masuk">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-28T15:45:28.132450" level="INFO">Clicking element 'xpath=//button[contains(text(), 'OKE')]'.</msg>
+<arg>xpath=//button[contains(text(), 'OKE')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-28T15:45:28.131457" elapsed="0.452944"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=moe-dontallow_button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-28T15:45:28.584401" elapsed="0.941017"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-28T15:45:29.526443" level="INFO">Clicking button 'id=moe-dontallow_button'.</msg>
+<arg>id=moe-dontallow_button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-28T15:45:29.525418" elapsed="0.110272"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-28T15:45:29.636691" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-28T15:45:29.635690" elapsed="0.185973"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-28T15:45:29.822168" level="INFO">Typing text 'fadhilahalwi09@gmail.com' into text field 'name=username'.</msg>
+<arg>name=username</arg>
+<arg>fadhilahalwi09@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-28T15:45:29.822168" elapsed="0.369734"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-28T15:45:30.192896" level="INFO">Typing text 'anjinKdhupd1!' into text field 'name=password'.</msg>
+<arg>name=password</arg>
+<arg>anjinKdhupd1!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-28T15:45:30.192896" elapsed="0.186313"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-28T15:45:30.380207" level="INFO">Clicking button 'xpath=//button[contains(@class, 'qa-login-button')]'.</msg>
+<arg>xpath=//button[contains(@class, 'qa-login-button')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-28T15:45:30.380207" elapsed="0.157234"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-28T15:45:31.538038" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-28T15:45:30.537441" elapsed="1.000597"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-28T15:45:31.538038" level="INFO">Typing text 'Presage SRPB43j1' into text field 'xpath=//input[@data-testid='search-input']'.</msg>
+<arg>xpath=//input[@data-testid='search-input']</arg>
+<arg>Presage SRPB43j1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-28T15:45:31.538038" elapsed="1.753222"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-28T15:45:34.292488" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-28T15:45:33.291260" elapsed="1.001228"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-28T15:45:34.292488" level="INFO">Clicking element 'xpath=//a[@data-testid='search__content-related-product']'.</msg>
+<arg>xpath=//a[@data-testid='search__content-related-product']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-28T15:45:34.292488" elapsed="1.830375"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-28T15:45:36.123868" level="INFO">Clicking button 'id=btn-add-to-cart'.</msg>
+<arg>id=btn-add-to-cart</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-28T15:45:36.123868" elapsed="0.274484"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-28T15:45:38.398862" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-28T15:45:36.398352" elapsed="2.000510"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-28T15:45:38.399875" level="INFO">Clicking button 'xpath=//span[@class='qa-cart-button']'.</msg>
+<msg time="2025-01-28T15:45:38.664023" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-28T15:45:38.664023" level="FAIL">Button with locator 'xpath=//span[@class='qa-cart-button']' not found.</msg>
+<arg>xpath=//span[@class='qa-cart-button']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="FAIL" start="2025-01-28T15:45:38.398862" elapsed="0.267193">Button with locator 'xpath=//span[@class='qa-cart-button']' not found.</status>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>xpath=//span[@class='ic-cart text-primary-1 qa-cart-button justify-end flex']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-28T15:45:38.667052" elapsed="0.000000"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>xpath=//span[@class='ic-minus text-neutral-300']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-28T15:45:38.667052" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-01-28T15:45:28.130455" elapsed="10.536597">Button with locator 'xpath=//span[@class='qa-cart-button']' not found.</status>
+</kw>
+<status status="FAIL" start="2025-01-28T15:45:22.934521" elapsed="15.733223">Button with locator 'xpath=//span[@class='qa-cart-button']' not found.</status>
+</test>
+<status status="FAIL" start="2025-01-28T15:45:22.681565" elapsed="15.987374"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Jamtangan" id="s1" pass="0" fail="1" skip="0">Jamtangan</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-01-28T15:45:23.380585" level="WARN">The chromedriver version (131.0.6778.264) detected in PATH at C:\Ruby31-x64\bin\chromedriver.exe might not be compatible with the detected chrome version (132.0.6834.111); currently, chromedriver 132.0.6834.110 is recommended for chrome 132.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
