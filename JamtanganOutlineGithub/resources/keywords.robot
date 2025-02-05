@@ -35,6 +35,7 @@ Then I input credentials account
         
         # Memasukkan password yang berada pada indeks 2*i+1 (setiap pasangan password berada pada indeks ganjil)
         Input Text      ${password_field}    ${LOGIN_CREDENTIALS}[${i*2+1}]  # Isi password, Mengambil password pada indeks ganjil (misalnya, indeks 1 dan 3). Ini dilakukan dengan cara mengakses ${LOGIN_CREDENTIALS}[${i*2+1}], yang akan mengakses elemen kedua (password pertama) saat i=0 dan elemen keempat (password kedua) saat i=1.
+        Wait Until Element Is Visible    ${button_login}
         Click Button    ${button_login}
         Sleep    2
     END
