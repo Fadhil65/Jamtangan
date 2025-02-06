@@ -39,6 +39,7 @@ Then I input credentials account
         Click Button    ${button_login}
         Sleep    2
     END
+    Wait Until Element Is Visible    ${Avatar_icon}
 
 
 Then I search

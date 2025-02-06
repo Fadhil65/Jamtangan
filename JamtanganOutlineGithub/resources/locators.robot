@@ -11,3 +11,4 @@ ${button_add_to_cart}    id=btn-add-to-cart
 ${button_add_to_cart_popup}    id=btn-cta
 ${button_cart}    xpath=//span[@class='ic-cart text-primary-1 qa-cart-button justify-end flex']
 ${button_cart_minus}    xpath=//span[@class='ic-minus text-neutral-300']
+${Avatar_icon}    xpath=//picture/img[@alt='User avatar icon']
