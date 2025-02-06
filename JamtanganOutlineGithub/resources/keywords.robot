@@ -44,7 +44,7 @@ Then I input credentials account
 Then I search
     [Arguments]    ${key_search}
     Input Text    ${search_field}    ${key_search}
-    Wait Until Element Is Visible    ${search_related}
+    Wait Until Element Is Visible    ${search_related}    2s
     Click Element    ${search_related}
 
 And click button add to cart
