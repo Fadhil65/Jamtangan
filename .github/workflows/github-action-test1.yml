@@ -47,9 +47,18 @@ jobs:
      #    run: |
      #   robot --outputdir results --exclude slow tests/
 
-      # Step 5: Upload test results
+      # Step 5: Upload test results (log.html, report.html, output.xml)
       - name: Upload Robot Framework results
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: robot-results
           path: results/
+
+      # Step 6: Upload failed test screenshots
+      - name: Upload Robot Framework screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-screenshots
+          path: results/*.png
